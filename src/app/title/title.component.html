@@ -1,0 +1,42 @@
+<h1>Curso Angular</h1>
+<p *ngIf="!isAvailable;else available">Lanzamiento 25 de diciembre de 2019</p>
+
+<ng-template #available>
+	<span class="highlight">Curso disponible</span>
+</ng-template>
+<!--Ejem de ng-switch -->
+<div class="category" [ngSwitch]="category">
+	<span *ngSwitchCase="'web'">Desarrollo web</span>
+	<span *ngSwitchCase="'mobile'">Desarrollo móvil</span>
+	<span *ngSwitchCase="'other'">Desarrollo General</span>
+	<span *ngSwitchDefault>No se especifica</span>
+</div>
+<!-- -->
+<h3 >Tutor:{{ name }}</h3>
+
+<div>
+	<a (click)="toggleMoreInformation()">
+		Más información 
+		<!-- Ejm con class propoerty[class.fa-chevron-circle-down]="!moreInformation" [class.fa-chevron-circle-up]="moreInformation"-->
+		<i class="fa " [ngClass]="{'fa-chevron-circle-down': !moreInformation, 'fa-chevron-circle-up':moreInformation}" ></i>
+	</a>
+	<p *ngIf="moreInformation">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ornare ligula non nisl feugiat tincidunt. Sed quis leo eget lorem sagittis rutrum id sit amet dui. </p>	
+</div>
+<!-- Temas de cursos -->
+<ul>
+	<li *ngFor="let topic of topics; index as posicion">
+		{{posicion+1}}.-{{topic}}
+	</li>
+</ul>
+<!-- -->
+
+<div>
+<!-- [class.active]="!isAvailable" esto e spara colocralo activo vuando no es isAvailable -->
+<button [disabled]="isAvailable"  type="button" [ngClass]="{active: isAvailable, shadow: !isAvailable}" name="button">Inscribir</button>
+
+<!-- nGcLASS- --->
+<!-- 1-A una variable a través de un string [ngClass]="css_classes"-->
+<!-- 2-A un arreglo a través de un string [ngClass]="['active','shadow']"-->
+<!-- 3-A una variavle que contiene un arreglo [ngClass]="css_classes" this.css_clases=['active,'shadow']-->
+<!-- 4-A un un objeto que sirve de condicional [ngClass]="{active: isAvailable}"-->
+</div>
