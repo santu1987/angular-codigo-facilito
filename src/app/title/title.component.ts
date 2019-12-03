@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
 	selector: 'app-title',
@@ -16,21 +16,30 @@ export class TitleComponent implements OnInit{
 
 	public moreInformation : boolean = false;
 
-	public isAvailable : boolean = true;
+	public isAvailable : boolean = false;
 
 	public topics: string[];
 
 	public category: string //mobile, web, other 
+
+	public price:number;
+
+	public seconds: number = 3660;
+
+	public launchDate: Date;
 	//--Cuerpo de metodos
+
+	@Input() suscribed : boolean; 
 
 	constructor(){}
 
 	ngOnInit(){
 		this.name = "Gianni";
 		this.edad = 25;
-		setTimeout(()=> this.isAvailable = false, 3000)
+		//setTimeout(()=> this.isAvailable = true, 3000)
 	    setTimeout(()=> this.moreInformation = true,3000)
-
+	    this.launchDate = new Date(2018,11,25);
+	    this.price = 25;
 		//setTimeout(()=> this.css_classes = ["shadow"], 3000)
 		//-Dandole valores al arreglo de topicos/temas del curso
 		this.topics = [

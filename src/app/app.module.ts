@@ -6,16 +6,23 @@ import { AppComponent } from './app.component';
 import {TitleComponent  } from './title/title.component';
 import { FullscreenComponent } from './fullscreen/fullscreen.component';
 import { UserCardComponent } from './user-card/user-card.component';
+//-Import formularios
+import { FormsModule } from '@angular/forms';
+//-
+import {SecondsToTimeFormat} from './pipes/SecondsToTimeFormat.pipe'
+//-
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
     FullscreenComponent,
     UserCardComponent,
+    SecondsToTimeFormat
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

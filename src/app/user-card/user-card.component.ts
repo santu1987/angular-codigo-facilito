@@ -21,7 +21,9 @@ export class UserCardComponent implements OnInit {
       this.name = "Gianni";
       this.username = "gianni_santucci";
       this.avatar = "https://static3.abc.es/media/play/2017/12/14/homer-simpson-superheroe-ketF--620x349@abc.png";
+      //Emito el valor del payload
       setTimeout(()=> this.suscribed.emit(true),3000)
+      setTimeout(()=> this.name="Cody",3000)
   }
 
   changing( event: any){

@@ -1,6 +1,6 @@
 <div class="ligth">
   <app-fullscreen>
-  	<app-title></app-title>
-  	<app-user-card (suscribed)="userSuscribed($event)"></app-user-card>
+  	<app-title [suscribed]="userSuscribed"></app-title>
+  	<app-user-card (suscribed)="suscriptionChanged($event)"></app-user-card>
   </app-fullscreen>
 </div>
