@@ -10,6 +10,8 @@ import { UserCardComponent } from './user-card/user-card.component';
 import { FormsModule } from '@angular/forms';
 //-
 import {SecondsToTimeFormat} from './pipes/SecondsToTimeFormat.pipe'
+//-Importo las directivas
+import {RedBorder} from './directives/RedBorder.directive';
 //-
 @NgModule({
   declarations: [
@@ -17,7 +19,8 @@ import {SecondsToTimeFormat} from './pipes/SecondsToTimeFormat.pipe'
     TitleComponent,
     FullscreenComponent,
     UserCardComponent,
-    SecondsToTimeFormat
+    SecondsToTimeFormat,
+    RedBorder,
   ],
   imports: [
     BrowserModule,

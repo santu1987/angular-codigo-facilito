@@ -12,7 +12,7 @@
 	<span *ngSwitchDefault>No se especifica</span>
 </div>
 <!-- -->
-<h3 >Tutor:{{ name }}</h3>
+<h3 [redBorder]="'blue'" [redClass]="'red'" >Tutor:{{ name }}</h3>
 
 <div>
 	<a (click)="toggleMoreInformation()">
