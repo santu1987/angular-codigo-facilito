@@ -14,7 +14,7 @@
 <!-- -->
 <h3 [redBorder]="'blue'" [redClass]="'red'" >Tutor:{{ name }}</h3>
 
-<div>
+<div [@showUp]="moreInformation">
 	<a (click)="toggleMoreInformation()">
 		Más información 
 		<!-- Ejm con class propoerty[class.fa-chevron-circle-down]="!moreInformation" [class.fa-chevron-circle-up]="moreInformation"-->

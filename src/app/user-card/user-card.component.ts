@@ -1,4 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+//--importo mel servicio de articulos
+import{  ArticlesService } from '../services/articles.service';
 
 @Component({
   selector: 'app-user-card',
@@ -15,7 +17,7 @@ export class UserCardComponent implements OnInit {
   //Se declara un decorador como una instancia de evenEmitter, en este caso devuelve un bool
   @Output() suscribed = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor(private articlesS: ArticlesService){}
 
   ngOnInit() {
       this.name = "Gianni";
@@ -24,6 +26,8 @@ export class UserCardComponent implements OnInit {
       //Emito el valor del payload
       setTimeout(()=> this.suscribed.emit(true),3000)
       setTimeout(()=> this.name="Cody",3000)
+
+      this.articlesS.articlesCount = 20;
   }
 
   changing( event: any){

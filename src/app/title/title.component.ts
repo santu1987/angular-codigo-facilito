@@ -1,10 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { showUp } from '../animations/showUp.animation';
 
 @Component({
 	selector: 'app-title',
 	templateUrl: 'title.component.html',
 	//styles : ['h1{ font-family:Roboto;}'],
-	styleUrls: ['./title.component.css']
+	styleUrls: ['./title.component.css'],
+	animations: [ showUp ]
 })
 
 export class TitleComponent implements OnInit{

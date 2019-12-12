@@ -1,0 +1,20 @@
+<h3>Repositorios: {{articlesS.articlesCount}}</h3>
+<!--Otra forma de mostrar el count del observador-: HAciendo esto se esta subscribiendo dos veces al observador-->
+<p>{{(articlesS.reposObserver | async )?.length}} repositorios </p>
+
+<div class="">
+	<p style="font-weight:bold;font-size:1.3em;">
+		{{articlesS.mainRepo?.name}}
+	</p>
+</div>
+<p>
+	{{articlesS.reposCount}} repositorios
+</p>
+<!--
+<ul [class.show]="(articlesS.reposObserver | async)?.length >0">
+-->
+<ul [@staggeredShowUp]="(articlesS.reposObserver | async)?.length">
+	<li *ngFor="let repo of articlesS.reposObserver | async">
+		{{repo.name}}
+	</li>
+</ul>
